@@ -36,6 +36,8 @@ source .bashrc
 
 
 # 转播教程
+> streamlink 代理配置
+> --http-proxy "http://address:port"
 ```bash
 nohup streamlink -O [采集地址] best | ffmpeg -re -i pipe:0 -c:v copy -c:a aac -f flv [推流地址] > /home/liveBroadcast.log 2>&1 &
 ```
