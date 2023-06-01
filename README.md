@@ -39,8 +39,8 @@ source .bashrc
 ```bash
 nohup streamlink -O [采集地址] best | ffmpeg -re -i pipe:0 -c:v copy -c:a aac -f flv [推流地址] > /home/rtmp_push.log 2>&1 &
 ```
-[采集地址]：youtube 等，具体支持站点查看：https://streamlink.github.io/plugins.html
-[推流地址]：推送的地址，B站等
+- [采集地址]：youtube 等，具体支持站点查看：https://streamlink.github.io/plugins.html
+- [推流地址]：推送的地址，B站等
 
 # 服务守护
 替换下面的 ExecStart 为上面自己修改的命令
