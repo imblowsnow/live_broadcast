@@ -37,7 +37,7 @@ source .bashrc
 
 # 转播教程
 ```bash
-nohup streamlink -O [采集地址] best | ffmpeg -re -i pipe:0 -c:v copy -c:a aac -f flv [推流地址] > /home/rtmp_push.log 2>&1 &
+nohup streamlink -O [采集地址] best | ffmpeg -re -i pipe:0 -c:v copy -c:a aac -f flv [推流地址] > /home/liveBroadcast.log 2>&1 &
 ```
 - [采集地址]：youtube 等，具体支持站点查看：https://streamlink.github.io/plugins.html
 - [推流地址]：推送的地址，B站等
@@ -55,7 +55,7 @@ After=network.target
 
 [Service]
 Type=forking
-ExecStart=streamlink -O https://www.youtube.com/watch?v=x6q9AxPUTOs best | ffmpeg -re -i pipe:0 -c:v copy -c:a aac -f flv rtmp://a.rtmp.youtube.com/live2/fzfh-vd3h-w7tg-yc02-fzzf > /home/rtmp_push.log 2>&1 &
+ExecStart=streamlink -O [采集地址] best | ffmpeg -re -i pipe:0 -c:v copy -c:a aac -f flv [推流地址] > /home/liveBroadcast.log 2>&1 &
 Restart=always
 [Install]
 
