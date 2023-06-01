@@ -44,6 +44,10 @@ nohup streamlink -O [采集地址] best | ffmpeg -re -i pipe:0 -c:v copy -c:a aa
 
 # 服务守护
 替换下面的 ExecStart 为上面自己修改的命令
+
+新增文件
+/usr/lib/systemd/system/liveBroadcast.service
+
 ```service
 [Unit]
 Description=rtmp push
